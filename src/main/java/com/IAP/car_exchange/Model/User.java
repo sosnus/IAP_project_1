@@ -33,8 +33,7 @@ public class User {
 
     @Getter
     @Setter
-    @NotNull
-    @Column(name = "pesel", nullable = false)
+    @Column(name = "pesel")
     private int pesel;
 
     @Getter
