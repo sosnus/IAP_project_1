@@ -13,6 +13,7 @@ public class Office {
     @Setter
     @Id
     @Size(max = 32)
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 

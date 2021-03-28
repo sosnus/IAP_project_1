@@ -7,7 +7,8 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.sql.Date;
+import java.util.Date;
+
 
 @Entity
 @Table(name = "users")
@@ -56,5 +57,5 @@ public class User {
     @Setter
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "office_id", referencedColumnName = "id")
-    private long officeId;
+    private Office officeId;
 }
