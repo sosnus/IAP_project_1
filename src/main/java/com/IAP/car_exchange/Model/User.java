@@ -33,6 +33,11 @@ public class User {
 
     @Getter
     @Setter
+    @Column(name = "surname")
+    private String sureName;
+
+    @Getter
+    @Setter
     @Column(name = "pesel")
     private int pesel;
 
