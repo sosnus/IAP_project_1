@@ -1,13 +1,16 @@
 package com.IAP.car_exchange.Model;
 
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "cars")
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Car {
 
     @Getter
@@ -19,6 +22,7 @@ public class Car {
     @Getter
     @Setter
     @Id
+    @NotEmpty
     @Column(name = "plate_number")
     private String plateNumber;
 

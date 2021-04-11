@@ -13,11 +13,12 @@ import java.util.Date;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class User {
     @Getter
     @Setter
     @Id
-    @Size(max = 32)
+    @NotNull
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
@@ -38,8 +39,9 @@ public class User {
 
     @Getter
     @Setter
+    @Size(min = 10, max = 12)
     @Column(name = "pesel")
-    private int pesel;
+    private String pesel;
 
     @Getter
     @Setter
@@ -63,7 +65,7 @@ public class User {
     @JoinColumn(name = "office_id", referencedColumnName = "id")
     private Office officeId;
 
-    public User(String firstName, String middleName, String sureName, int pesel, char gender, Date birthDate, String role, Office officeId){
+    public User(String firstName, String middleName, String sureName, String pesel, char gender, Date birthDate, String role, Office officeId){
         this.firstName = firstName;
         this.middleName = middleName;
         this.sureName = sureName;
