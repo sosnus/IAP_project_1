@@ -1,13 +1,15 @@
 package com.IAP.car_exchange.Model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "offices")
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Office {
     @Getter
     @Setter
