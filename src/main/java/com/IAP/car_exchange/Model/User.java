@@ -1,8 +1,6 @@
 package com.IAP.car_exchange.Model;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -13,6 +11,8 @@ import java.util.Date;
 @Entity
 @Table(name = "users")
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class User {
     @Getter
     @Setter
@@ -62,4 +62,16 @@ public class User {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "office_id", referencedColumnName = "id")
     private Office officeId;
+
+    public User(String firstName, String middleName, String sureName, int pesel, char gender, Date birthDate, String role, Office officeId){
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.sureName = sureName;
+        this.pesel = pesel;
+        this.gender = gender;
+        this.birthDate = birthDate;
+        this.role = role;
+        this.officeId = officeId;
+
+    }
 }
